@@ -1,0 +1,59 @@
+Процессы контроля версий.
+Версии: 
+1. Число 1.73.12
+	а. 12 - маленькие исправления
+	b. 73 - релиз версии
+	с. 1 - номер версии
+2. Git - система контроля версий.
+	Сервисы:
+		a. github
+		b. bitbucket
+		c. gitlab
+mkdir test_git
+ls
+cd test_git
+touch test.py
+git init 
+ls -a 
+git status
+git add file.py
+git rm - удалить
+git add -A - нужно поместить под контроль версий 
+git commit -m "Initial commit"
+rm -rf - удалить репозиторий
+
+git remote add
+git push origin master
+
+git clone (ссылка на репо)
+
+git pull origin master
+
+git branch branch_name- создать ветку
+
+git branch - показывают ветки
+
+git checkout branch_name - переключиться между ветками
+touch new_file.py
+git status
+git add-A
+git commit -m'new branch'
+git status
+git branch
+git checkout master
+ls
+git checkout branch-name
+nano test.py
+git add -A
+git commit -m'eno'
+
+git merge branch_name
+
+git log - полная история коммитов
+
+.gitignore - фаил инструкций
+
+git flow
+
+git fetch --all
+

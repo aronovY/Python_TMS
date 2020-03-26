@@ -1,0 +1,4 @@
+name,age,is_student,country
+Alex,20,True,
+John,22,,Belarus
+Oleg,29,False,USA

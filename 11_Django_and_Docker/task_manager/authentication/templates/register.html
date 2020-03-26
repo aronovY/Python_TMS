@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form action='' method='post'>
+    {% csrf_token %}
+    {% for field in form %}
+        <div style="font-size: 25px">{{ field.label_tag }} </div>
+        <div>
+            {% if field.help_text %}
+                <div style="color: darkblue; font-size: 10px">{{ field.help_text }}</div>
+            {% endif %}
+            {{ field }}
+            {% if field.errors %}
+                <div style="color: red; font-size: 10px">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+        <p align="center"><input type='submit' value='Register'></p>
+    </form>
+{% endblock %}

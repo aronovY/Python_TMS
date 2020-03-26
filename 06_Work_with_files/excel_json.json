@@ -1,0 +1,59 @@
+{
+ "students": {
+  "Bob Hardy": {
+   "marks": [
+    9,
+    8,
+    10,
+    5
+   ],
+   "average_marks": 8.0
+  },
+  "Ann Dier": {
+   "marks": [
+    4,
+    9,
+    5,
+    8
+   ],
+   "average_marks": 6.5
+  },
+  "Kate Rose": {
+   "marks": [
+    6,
+    8,
+    4,
+    6,
+    2
+   ],
+   "average_marks": 5.2
+  },
+  "Jane Winks": {
+   "marks": [
+    5,
+    5,
+    8,
+    7
+   ],
+   "average_marks": 6.25
+  },
+  "Toby Celso": {
+   "marks": [
+    9,
+    9,
+    9,
+    3
+   ],
+   "average_marks": 7.5
+  },
+  "Danny  Alli": {
+   "marks": [
+    10,
+    3,
+    6,
+    8
+   ],
+   "average_marks": 6.75
+  }
+ }
+}

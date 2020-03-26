@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+    <p>Name: {{ object.name }}</p>
+    <p>Description: {{ object.description }}</p>
+    <p>Created at: {{ object.created_at}}</p>
+    </div>
+    <a href='{% url 'projects-list' %}'><button>Back to projects list</button></a> |
+    <a href='{% url 'projects-update' object.id %}'><button>Update project</button></a> |
+    <a href='{% url 'projects-delete' object.id %}'><button>Delete project</button></a>
+{% endblock %}

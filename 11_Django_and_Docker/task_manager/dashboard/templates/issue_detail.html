@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <p>Name: {{ issue.name }}</p>
+        <p>Description: {{ issue.description }}</p>
+        <p>Created at: {{ issue.created_at}}</p>
+        <p>Deadline: {{ issue.deadline }}</p>
+        <p>Assigne: {{ issue.assigne }}</p>
+        <p>For progect: {{ issue.project.name }}</p>
+        <p>Reporter: {{ issue.reported }}</p>
+    </div>
+    <a href='{% url 'issue-list' %}'><button>Back to issue list</button></a> |
+    <a href='{% url 'issue-update' issue.id %}'><button>Update issue</button></a> |
+    <a href='{% url 'issue-delete' issue.id %}'><button>Delete issue</button></a>
+{% endblock %}

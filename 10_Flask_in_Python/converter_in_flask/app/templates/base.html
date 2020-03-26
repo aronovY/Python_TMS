@@ -1,0 +1,36 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Converter</title>
+      {% else %}
+      <title>Welcome to Converter</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>
+            <div style="color: deepskyblue;">
+                Converter:
+                <a href="{{ url_for('home') }}"><button>Home</button></a>
+                {% if current_user.is_anonymous %}
+                <a href="{{ url_for('register') }}"><button>Register</button></a>
+                <a href="{{ url_for('login') }}"><button>Login</button></a>
+                {% else %}
+                <a href="{{ url_for('user', login=current_user.login) }}"><button>Profile</button></a>
+                <a href="{{ url_for('convert') }}"><button>Convert</button></a>
+                <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

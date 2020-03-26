@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+   .layer1 {
+    float: left;
+   }
+   .layer2 {
+       width: 300px;
+       float: right;
+   }
+  </style>
+<h1 align="center" style="color: deepskyblue"><font face="Arial"> Convert</font></h1>
+<p><font size="6" color="#00bfff" face="Arial">Choice from all currency</font> </p>
+<table border="2" class="layer1">
+    <tr>
+        <th style="color: darkblue;">Name</th>
+        <th style="color: darkblue">Abbreviation</th>
+    </tr>
+    {% for money in all_money %}
+    <tr>
+        <td style="color: deepskyblue">{{ money.name }}</td>
+        <td style="color: deepskyblue;">{{ money.abbreviation }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="" method="post" class="layer2">
+    {{ form.hidden_tag() }}
+    <p align="right", style="color: blue">
+        {{ form.first_cur.label }}
+        {{ form.first_cur(size=15) }}<br>
+        {% for error in form.first_cur.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p align="right", style="color: blue">
+        {{ form.how_much.label }}
+        {{ form.how_much(size=15) }}<br>
+        {% for error in form.how_much.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p align="right", style="color: blue">
+        {{ form.second_cur.label }}
+        {{ form.second_cur(size=15) }}<br>
+        {% for error in form.second_cur.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p align="right">{{ form.submit() }}</p>
+</form>
+{% endblock %}

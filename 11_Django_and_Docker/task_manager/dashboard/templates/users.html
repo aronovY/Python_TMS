@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <div>
+        <h1>Total users: {{ count }}</h1>
+        <a href="{% url 'register' %}"><button>Register</button></a>
+    </div>
+    <div>
+        <div>
+            <h4>Users list:</h4>
+        </div>
+        {% for object in object_list %}
+            <li><p><strong style="color: deepskyblue">Name:</strong> {{ object.username }}</p>
+                <p><strong style="color: deepskyblue">Email:</strong> {{ object.email }}</p>
+                <p><strong style="color: deepskyblue">Group:</strong> {{ object.groups.first }}</p>
+                <p><strong style="color: deepskyblue">Date joined:</strong> {{ object.date_joined}}</p>
+            </li>
+            <hr class="mt-0 mb-4">
+        {% endfor %}
+    </div>
+    {% include 'paginator.html' %}
+    <hr class="mt-0 mb-4">
+</div>
+{% endblock %}

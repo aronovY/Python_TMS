@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <div>
+        <h1>Total issues: {{ count }}</h1>
+        <a href="{% url 'issue-create' %}"><button>New +</button></a>
+    </div>
+    <div>
+        <div>
+            <h4>Issue list:</h4>
+        </div>
+        {% for iss in issue_list %}
+            <div>
+                {{ iss.name }} |
+                <a href='{{ iss.get_absolute_url }}'><button>Detail</button></a>
+            </div>
+        {% endfor %}
+    </div>
+    {% include 'paginator.html' %}
+    <hr class="mt-0 mb-4">
+</div>
+{% endblock %}

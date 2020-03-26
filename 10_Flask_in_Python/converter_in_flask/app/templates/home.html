@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 align="center" style="color: blue">Hi, {{ current_user.login }}!</h1>
+    <p align="center" style="color: blue">This is my first site. It's converter of currency</p>
+{% endblock %}
+
+</body>
+</html>

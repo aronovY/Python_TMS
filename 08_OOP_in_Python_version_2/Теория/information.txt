@@ -1,0 +1,10 @@
+1) hasattr, getattr, setattr
+2) Статические методы, методы класса, property
+    type
+    http://pythonz.net/references/named/type/
+3) exec, eval
+4) Метаклассы (поверхностно)
+    https://habr.com/en/post/145835/
+5) Класс данных
+    https://python-scripts.com/python-3-7#data-classes
+    https://python-scripts.com/data-class

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="color: deepskyblue">User: {{ user.login }}</h1>
+    <hr>
+    <p align="center" style="color: deepskyblue">Your history:</p>
+    {% for cur in history %}
+    <p style="color: deepskyblue">
+    <b>{{ cur.first_currency }} - {{ cur.how_much }} in {{cur.second_currency}} = {{ cur.total}} {{cur.second_currency}}</b>
+    </p>
+    {% endfor %}
+{% endblock %}

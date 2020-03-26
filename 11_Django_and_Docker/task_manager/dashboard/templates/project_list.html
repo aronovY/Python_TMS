@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <div>
+        <h1>Total projects: {{ count }}</h1>
+        <a href="{% url 'projects-create' %}"><button>New +</button></a>
+    </div>
+    <div>
+        <div>
+            <h4>Project list:</h4>
+        </div>
+        {% for obj in object_list %}
+            <div>
+                {{ obj.name }} |
+                <a href='{{ obj.get_absolute_url }}'><button>link</button></a>
+            </div>
+        {% endfor %}
+    </div>
+    {% include 'paginator.html' %}
+</div>
+{% endblock %}

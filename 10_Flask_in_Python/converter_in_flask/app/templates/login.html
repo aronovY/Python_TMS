@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 align="center" style="color:deepskyblue;">Sign In</h1>
+    <div align="center" style="color: deepskyblue">
+        <form action="" method="post" >
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.login.label }}<br>
+                {{ form.login(size=32) }}<br>
+                {% for error in form.login.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>
