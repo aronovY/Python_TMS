@@ -6,14 +6,14 @@ from dashboard import serializers
 
 
 # @api_view(['GET', 'POST'])
-# def project_list(request):
+# def issue_list(request):
 #     if request.method == 'GET':
-#         qs = models.Project.objects.all()
-#         serializer = serializers.ProjectSerializer(qs, many=True)
+#         qs = models.Issue.objects.all()
+#         serializer = serializers.IssueSerializer(qs, many=True)
 #         return response.Response(data=serializer.data)
 #
 #     elif request.method == 'POST':
-#         serializer = serializers.ProjectSerializer(data=request.data)
+#         serializer = serializers.IssueSerializer(data=request.data)
 #         if serializer.is_valid():
 #             serializer.save()
 #             return response.Response(
@@ -23,18 +23,18 @@ from dashboard import serializers
 #
 #
 # @api_view(['GET', 'PUT', 'DELETE'])
-# def project_detail(request, pk):
+# def issue_detail(request, pk):
 #     try:
-#         obj = models.Project.objects.get(id=pk)
-#     except models.Project.DoesNotExist:
+#         obj = models.Issue.objects.get(id=pk)
+#     except models.Issue.DoesNotExist:
 #         return response.Response(status=status.HTTP_404_NOT_FOUND)
 #
 #     if request.method == 'GET':
-#         serializer = serializers.ProjectSerializer(obj)
+#         serializer = serializers.IssueSerializer(obj)
 #         return response.Response(serializer.data)
 #
 #     elif request.method == 'PUT':
-#         serializer = serializers.ProjectSerializer(obj, data=request.data)
+#         serializer = serializers.IssueSerializer(obj, data=request.data)
 #         if serializer.is_valid():
 #             serializer.save()
 #             return response.Response(serializer.data)

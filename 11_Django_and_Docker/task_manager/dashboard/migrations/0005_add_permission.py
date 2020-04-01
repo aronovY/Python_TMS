@@ -1,6 +1,9 @@
+import os
+
+from django.conf import settings
 from django.contrib.auth.models import Permission, Group
 from django.db import migrations
-from dashboard import apps
+
 
 
 def add_permissions(apps, schema_editor):
@@ -19,9 +22,10 @@ class Migration(migrations.Migration):
         ('dashboard', '0004_add_user_to_group'),
     ]
 
-    operations = [
-        migrations.RunPython(add_permissions)
-    ]
+    if not settings.IS_TEST:
+        operations = [
+            migrations.RunPython(add_permissions)
+        ]
 
 
 # from django.contrib.auth.models import Group

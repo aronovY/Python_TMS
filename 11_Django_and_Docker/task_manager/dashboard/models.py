@@ -35,7 +35,7 @@ class Issue(models.Model):
         max_length=2000
     )
     created_at = models.DateTimeField(
-        auto_created=True
+        auto_now=True
     )
     reported = models.ForeignKey(
         settings.AUTH_USER_MODEL,

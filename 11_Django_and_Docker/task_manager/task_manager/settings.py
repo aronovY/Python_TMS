@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'crispy_forms',
     'dashboard',
     'authentication',
     'rest_framework',
@@ -89,8 +88,6 @@ DATABASES = {
         'HOST': '127.0.0.1',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -152,3 +149,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10,
 }
+
+IS_TEST = os.getenv('IS_TEST', False)
