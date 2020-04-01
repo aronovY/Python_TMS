@@ -148,8 +148,3 @@ def model_form_upload(request):
                   {
                    'form': form
                   })
-
-
-class SolarSystemView(generic.TemplateView):
-    template_name = 'solar-system.html'
-

@@ -30,16 +30,13 @@ from dashboard import api_views as dash_api_views
 router = routers.DefaultRouter()
 router.register(r'users', api_view.UserViewSet)
 router.register(r'groups', api_view.GroupViewSet)
-router.register(r'projects', dash_api_views.ProjectViewSet)
-router.register(r'issue/', dash_api_views.IssueViewSet)
+router.register(r'api/issues', dash_api_views.IssueViewSet, basename='api_issues')
+router.register(r'api/projects', dash_api_views.ProjectViewSet)
 urlpatterns = [
     # api
-
-    path('', include(router.urls)),
-
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
-
+    # path('', include(router.urls)),
+    #
+    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     path(
         'admin/',
@@ -142,9 +139,5 @@ urlpatterns = [
         name='upload'
     ),
 
-    path(
-        'solar-system',
-        views.SolarSystemView.as_view(),
-        name='solar-system',
-    ),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

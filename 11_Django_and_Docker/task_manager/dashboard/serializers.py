@@ -33,8 +33,6 @@ class IssueSerializer(serializers.ModelSerializer):
             'reported',
             'assigne',
             'deadline',
-
-
             'project')
 
         read_only_fields = (

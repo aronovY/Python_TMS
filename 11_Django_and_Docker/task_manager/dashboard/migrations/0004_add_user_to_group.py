@@ -1,5 +1,9 @@
+import os
+
+from django.conf import settings
 from django.contrib.auth.models import User, Group
 from django.db import migrations
+
 
 
 def add_user_to_group(apps, schema_editor):
@@ -19,6 +23,7 @@ class Migration(migrations.Migration):
         ('dashboard', '0003_add_users'),
     ]
 
-    operations = [
-        migrations.RunPython(add_user_to_group)
-    ]
+    if not settings.IS_TEST:
+        operations = [
+            migrations.RunPython(add_user_to_group)
+        ]
